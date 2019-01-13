@@ -86,14 +86,17 @@ namespace Lab04_TicTacToe.Classes
 		{
 			int[][] winners = new int[][]
 			{
+                //horizontal winning lines
 				new[] {1,2,3},
 				new[] {4,5,6},
 				new[] {7,8,9},
 
+                //vertical winning lines
 				new[] {1,4,7},
 				new[] {2,5,8},
 				new[] {3,6,9},
 
+                //diagonal winning lines
 				new[] {1,5,9},
 				new[] {3,5,7}
 			};
@@ -101,16 +104,27 @@ namespace Lab04_TicTacToe.Classes
 			// Given all the winning conditions, Determine the winning logic. 
 			for (int i = 0; i < winners.Length; i++)
 			{
+                //assign the coordinates of positions 1, 2, & 3
 				Position p1 = Player.PositionForNumber(winners[i][0]);
 				Position p2 = Player.PositionForNumber(winners[i][1]);
 				Position p3 = Player.PositionForNumber(winners[i][2]);
 
+                //assign strings a, b, c as either an integer OR the marker that has replaced it
 				string a = Board.GameBoard[p1.Row, p1.Column];
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
 
-				// TODO:  Determine a winner has been reached. 
-				// return true if a winner has been reached. 
+                // TODO:  Determine a winner has been reached. 
+                // return true if a winner has been reached. 
+                // if all three positions are the same (either all x's or all o's)
+                if (a == b && b == c && a == c)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 			
 			}
 
