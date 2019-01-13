@@ -6,6 +6,9 @@ namespace Lab04_TicTacToe.Classes
 {
 	class Game
 	{
+        /// <summary>
+		/// Bring in properties: board, players, winner 
+		/// </summary>
 		public Player PlayerOne { get; set; }
 		public Player PlayerTwo { get; set; }
 		public Player Winner { get; set; }
