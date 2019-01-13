@@ -6,6 +6,9 @@ namespace Lab04_TicTacToe.Classes
 {
     class Position
     {
+        /// <summary>
+		/// Referencing rows and columns from board
+		/// </summary>
 		public int Row { get; set; }
 		public int Column { get; set; }
 
