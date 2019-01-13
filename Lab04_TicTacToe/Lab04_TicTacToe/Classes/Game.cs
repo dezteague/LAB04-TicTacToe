@@ -30,7 +30,7 @@ namespace Lab04_TicTacToe.Classes
 		/// <returns>Winner</returns>
 		public Player Play()
 		{
-            BoardDisplayBoard();
+         
             //TODO: Complete this method and utilize the rest of the class structure to play the game.
 
             /*
