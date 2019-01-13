@@ -50,6 +50,30 @@ namespace Lab04_TicTacToe.Classes
 
             Use any and all pre-existing methods in this program to help construct the method logic. 
              */
+
+             //as long as the winner has not been identified, do this:
+             while(Winner == null)
+            {
+                //set up a counter to keep track of the number of turns
+                int turnCounter = 0;
+
+                //display the board
+                Board.DisplayBoard();
+                //determine whose turn it is
+                //and take a turn which means occupy one of the coordinates
+                NextPlayer().TakeTurn(Board);
+                //if there is a winner, declare the player as winner!
+                if (CheckForWinner(Board))
+                {
+                    Winner = NextPlayer();
+                }
+                //if not, count the turn and switch players
+                else
+                {
+                    turnCounter++;
+                    SwitchPlayer();
+                }
+            }
         }
 
 
