@@ -33,7 +33,7 @@ namespace Lab04_TicTacToe.Classes
 		/// <returns>Winner</returns>
 		public Player Play()
 		{
-         
+
             //TODO: Complete this method and utilize the rest of the class structure to play the game.
 
             /*
@@ -51,12 +51,12 @@ namespace Lab04_TicTacToe.Classes
             Use any and all pre-existing methods in this program to help construct the method logic. 
              */
 
-             //as long as the winner has not been identified, do this:
-             while(Winner == null)
-            {
-                //set up a counter to keep track of the number of turns
-                int turnCounter = 0;
+            //set up a counter to keep track of the number of turns
+            int turnCounter = 0;
 
+            //as long as the winner has not been identified, do this:
+            while (Winner == null)
+            {
                 //display the board
                 Board.DisplayBoard();
                 //determine whose turn it is
@@ -74,6 +74,17 @@ namespace Lab04_TicTacToe.Classes
                     SwitchPlayer();
                 }
             }
+
+             if (turnCounter > 9 && Winner == null)
+            {
+                Console.WriteLine("Sorry, you're out of trys! It's a draw");
+            }
+             else
+            {
+                Console.WriteLine($"Congratulations {Winner.Name}, you are the winner!");
+            }
+
+            return Winner;
         }
 
 
