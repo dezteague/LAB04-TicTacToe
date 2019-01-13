@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab04_TicTacToe.Classes;
+using System;
 
 namespace Lab04_TicTacToe
 {
