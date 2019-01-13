@@ -28,9 +28,10 @@ namespace Lab04_TicTacToe.Classes
 
             for (int i = 0; i < rows; i++) 
             {
+                Console.WriteLine();
                 for (int j = 0; j < columns; j++) 
                 {
-                    Console.Write($"{GameBoard[i,j]}");
+                    Console.Write($"|{GameBoard[i,j]}|");
                 }
             }
             Console.WriteLine();
