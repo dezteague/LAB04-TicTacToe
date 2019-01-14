@@ -18,5 +18,12 @@ namespace TicTacToeTest
             game.Board.GameBoard[0, 2] = "O";
             Assert.True(game.CheckForWinner(game.Board));
         }
+
+        [Fact]
+        public void MakeNewBoardTest()
+        {
+            Board board = new Board();
+            Assert.Equal("1", board.GameBoard[0, 0]);
+        }
     }
 }
