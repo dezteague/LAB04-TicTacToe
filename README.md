@@ -20,4 +20,5 @@ Build a Tic-Tac-Toe Game Board that allows two players to take turns marking the
 
 ![winner](https://github.com/dezteague/LAB04-TicTacToe/blob/master/Assets/winner.JPG)
 
+![draw](https://github.com/dezteague/LAB04-TicTacToe/blob/master/Assets/draw.JPG)
 
