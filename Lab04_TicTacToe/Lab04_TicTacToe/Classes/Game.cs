@@ -66,6 +66,7 @@ namespace Lab04_TicTacToe.Classes
                 if (CheckForWinner(Board))
                 {
                     Winner = NextPlayer();
+                    
                 }
                 //if not, count the turn and switch players
                 else
