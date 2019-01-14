@@ -6,6 +6,9 @@ namespace Lab04_TicTacToe.Classes
 {
 	class Game
 	{
+        /// <summary>
+		/// Bring in properties: board, players, winner 
+		/// </summary>
 		public Player PlayerOne { get; set; }
 		public Player PlayerTwo { get; set; }
 		public Player Winner { get; set; }
@@ -31,7 +34,7 @@ namespace Lab04_TicTacToe.Classes
 		public Player Play()
 		{
 
-			//TODO: Complete this method and utilize the rest of the class structure to play the game.
+            //TODO: Complete this method and utilize the rest of the class structure to play the game.
 
             /*
              * Complete this method by constructing the logic for the actual playing of Tic Tac Toe. 
@@ -47,7 +50,41 @@ namespace Lab04_TicTacToe.Classes
 
             Use any and all pre-existing methods in this program to help construct the method logic. 
              */
-		}
+
+            //set up a counter to keep track of the number of turns
+            int turnCounter = 0;
+
+            //as long as the winner has not been identified, do this:
+            while (Winner == null)
+            {
+                //display the board
+                Board.DisplayBoard();
+                //determine whose turn it is
+                //and take a turn which means occupy one of the coordinates
+                NextPlayer().TakeTurn(Board);
+                //if there is a winner, declare the player as winner!
+                if (CheckForWinner(Board))
+                {
+                    Winner = NextPlayer();
+                }
+                //if not, count the turn and switch players
+                else
+                {
+                    turnCounter++;
+                    SwitchPlayer();
+                    Console.Clear();
+                }
+                //if players reach maximum amout of tries w/out a winner, declare a draw 
+                if (turnCounter == 9 && Winner == null)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Sorry, you're out of trys! It's a draw");
+                } 
+            }
+            Console.Clear();
+            Console.WriteLine($"Congratulations {Winner.Name}, you are the winner!");
+            return Winner;
+        }
 
 
 		/// <summary>
@@ -59,14 +96,17 @@ namespace Lab04_TicTacToe.Classes
 		{
 			int[][] winners = new int[][]
 			{
+                //horizontal winning lines
 				new[] {1,2,3},
 				new[] {4,5,6},
 				new[] {7,8,9},
 
+                //vertical winning lines
 				new[] {1,4,7},
 				new[] {2,5,8},
 				new[] {3,6,9},
 
+                //diagonal winning lines
 				new[] {1,5,9},
 				new[] {3,5,7}
 			};
@@ -74,16 +114,27 @@ namespace Lab04_TicTacToe.Classes
 			// Given all the winning conditions, Determine the winning logic. 
 			for (int i = 0; i < winners.Length; i++)
 			{
+                //assign the coordinates of positions 1, 2, & 3
 				Position p1 = Player.PositionForNumber(winners[i][0]);
 				Position p2 = Player.PositionForNumber(winners[i][1]);
 				Position p3 = Player.PositionForNumber(winners[i][2]);
 
+                //assign strings a, b, c as either an integer OR the marker that has replaced it
 				string a = Board.GameBoard[p1.Row, p1.Column];
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
 
-				// TODO:  Determine a winner has been reached. 
-				// return true if a winner has been reached. 
+                // TODO:  Determine a winner has been reached. 
+                // return true if a winner has been reached. 
+                // if all three positions are the same (either all x's or all o's)
+                if (a == b && b == c && a == c)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 			
 			}
 

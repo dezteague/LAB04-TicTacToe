@@ -6,7 +6,11 @@ namespace Lab04_TicTacToe.Classes
 {
     class Player
     {
+        /// <summary>
+		/// Use the player's names
+		/// </summary>
 		public string Name { get; set; }
+
 		/// <summary>
 		/// P1 is X and P2 will be O
 		/// </summary>
@@ -17,7 +21,10 @@ namespace Lab04_TicTacToe.Classes
 		/// </summary>
 		public bool IsTurn { get; set; }
 
-
+        /// <summary>
+		/// Place an X or O on the desired position 
+		/// </summary>
+		/// <param name="board">game board</param>
 		public Position GetPosition(Board board)
 		{
 			Position desiredCoordinate = null;
@@ -31,7 +38,10 @@ namespace Lab04_TicTacToe.Classes
 
 		}
 
-
+        /// <summary>
+		/// use switch statement to manipulate positions on board 
+		/// </summary>
+		/// <param name="position">position </param>
 		public static Position PositionForNumber(int position)
 		{
 			switch (position)
@@ -50,8 +60,11 @@ namespace Lab04_TicTacToe.Classes
 			}
 		}
 
-	
-		public void TakeTurn(Board board)
+        /// <summary>
+        /// allows users to take turns in the game 
+        /// </summary>
+        /// <param name="board">board</param>
+        public void TakeTurn(Board board)
 		{
 			IsTurn = true;
 
