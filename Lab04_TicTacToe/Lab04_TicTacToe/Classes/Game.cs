@@ -72,18 +72,17 @@ namespace Lab04_TicTacToe.Classes
                 {
                     turnCounter++;
                     SwitchPlayer();
+                    Console.Clear();
                 }
+                //if players reach maximum amout of tries w/out a winner, declare a draw 
+                if (turnCounter == 9 && Winner == null)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Sorry, you're out of trys! It's a draw");
+                } 
             }
-
-             if (turnCounter > 9 && Winner == null)
-            {
-                Console.WriteLine("Sorry, you're out of trys! It's a draw");
-            }
-             else
-            {
-                Console.WriteLine($"Congratulations {Winner.Name}, you are the winner!");
-            }
-
+            Console.Clear();
+            Console.WriteLine($"Congratulations {Winner.Name}, you are the winner!");
             return Winner;
         }
 

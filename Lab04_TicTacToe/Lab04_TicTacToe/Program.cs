@@ -16,8 +16,8 @@ namespace Lab04_TicTacToe
 
             //assign markers "X" and "O" to the players
             //marker is the property, players are the objects
-            p1.Marker = "X";
-            p2.Marker = "O";
+            p1.Marker = "O";
+            p2.Marker = "X";
 
             Console.WriteLine("Player One, please enter your name:");
             string name1 = Console.ReadLine();
@@ -35,7 +35,7 @@ namespace Lab04_TicTacToe
             Board board = new Board();
 
             //instantiate a new game, calling in player one and player two
-            Game game = new Game(p1, p1);
+            Game game = new Game(p1, p2);
             //run game
             game.Play();
         }

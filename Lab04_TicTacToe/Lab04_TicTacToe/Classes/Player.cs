@@ -41,7 +41,7 @@ namespace Lab04_TicTacToe.Classes
         /// <summary>
 		/// use switch statement to manipulate positions on board 
 		/// </summary>
-		/// <param name="position">position</param>
+		/// <param name="position">position </param>
 		public static Position PositionForNumber(int position)
 		{
 			switch (position)
