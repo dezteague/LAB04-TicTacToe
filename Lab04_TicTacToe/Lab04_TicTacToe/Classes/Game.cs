@@ -53,6 +53,7 @@ namespace Lab04_TicTacToe.Classes
 
             //set up a counter to keep track of the number of turns
             int turnCounter = 0;
+            int drawCounter = 0;
 
             //as long as the winner has not been identified, do this:
             while (Winner == null)
@@ -80,10 +81,18 @@ namespace Lab04_TicTacToe.Classes
                 {
                     Console.Clear();
                     Console.WriteLine("Sorry, you're out of trys! It's a draw");
+                    Board.DisplayBoard();
+                    Console.WriteLine("Press Enter to exit the game");
+                    Console.ReadKey();
+                    Environment.Exit(0);
+                    drawCounter++;
                 } 
             }
             Console.Clear();
             Console.WriteLine($"Congratulations {Winner.Name}, you are the winner!");
+            Board.DisplayBoard();
+            Console.WriteLine("Press enter to exit the game");
+            Console.Read();
             return Winner;
         }
 
@@ -132,14 +141,11 @@ namespace Lab04_TicTacToe.Classes
                 {
                     return true;
                 }
-                else
-                {
-                    return false;
+                
+                    
                 }
-			
-			}
-
-			return false;
+            return false;
+        
 		}
 
 
